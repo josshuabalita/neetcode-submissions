@@ -1,0 +1,25 @@
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        sMap, tMap = {}, {}
+        for ch in s:
+            if ch not in sMap:
+                sMap[ch] = 1
+            else:
+                sMap[ch] += 1
+        
+        for ch in t:
+            if ch not in tMap:
+                tMap[ch] = 1
+            else:
+                tMap[ch] += 1
+        
+        return sMap == tMap
+
+# T O(n + m)
+# S O(n + m)
+
+# Input: strings -> s 
+#                   t
+# Output: return True if s and t are anagrams of each other
+#           otherwise return false
+# Terms: Anagram -> if they contain the same char, each char appears the same, regardless
